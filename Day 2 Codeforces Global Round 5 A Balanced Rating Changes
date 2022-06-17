@@ -1,0 +1,58 @@
+// https://codeforces.com/problemset/problem/1237/A
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    int arr[n];
+    int sum = 0;
+    int v[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> v[i];
+        arr[i] = v[i] / 2;
+        sum += arr[i];
+    }
+    if (sum < 0)
+    {
+        sum = abs(sum);
+        for (int i = 0; i < n; i++)
+        {
+            if (sum > 0)
+            {
+                if (v[i] % 2 == 1)
+                {
+                    arr[i] = arr[i] + 1;
+                    sum--;
+                }
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+    else
+    {
+        for (int i = 0; i < n; i++)
+        {
+            if (sum > 0)
+            {
+                if (v[i] % 2 == -1)
+                {
+                    arr[i] = arr[i] - 1;
+                    sum--;
+                }
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << endl;
+    }
+}
