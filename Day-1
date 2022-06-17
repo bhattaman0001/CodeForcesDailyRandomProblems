@@ -1,0 +1,24 @@
+// https://codeforces.com/problemset/problem/672/B
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    if (s.size() > 26)
+    {
+        cout << -1 << endl;
+    }
+    else
+    {
+        set<char> t;
+        for (auto i : s)
+        {
+            t.insert(i);
+        }
+        int v2 = n - t.size();
+        cout << v2 << endl;
+    }
+}
