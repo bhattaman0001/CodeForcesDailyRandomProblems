@@ -1,0 +1,22 @@
+// https://codeforces.com/problemset/problem/886/B
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    map<int, int> mp;
+    for(int i=1;i<=n;i++){
+        int x;
+        cin>>x;
+        mp[x]=i;
+    }
+    int ans=0;
+    int t=INT_MAX;
+    for(auto i : mp){
+        if(i.second < t){
+            t = i.second;
+            ans = i.first;
+        }
+    }
+    cout<<ans<<endl;
+}
