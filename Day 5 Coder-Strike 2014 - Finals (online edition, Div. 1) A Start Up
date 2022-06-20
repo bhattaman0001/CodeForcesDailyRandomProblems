@@ -1,0 +1,57 @@
+// https://codeforces.com/problemset/problem/420/A
+#include <bits/stdc++.h>
+using namespace std;
+bool isPalindrome(string s)
+{
+    int l = 0;
+    int r = s.size() - 1;
+    while (l < r)
+    {
+        if (s[l] != s[r])
+            return false;
+        l++;
+        r--;
+    }
+    return true;
+}
+void solve()
+{
+    string s;
+    cin >> s;
+    char arr[11] = {'A', 'H', 'I', 'M', 'O', 'T', 'U', 'V', 'W', 'Y', 'X'}; // only these letters are equal to their mirror so if string cannot contains any of it then NO otherwise YES
+    if (isPalindrome(s))
+    {
+        int n = s.size()/2 + 1; // because again same letter will come
+        int flag;
+        for (int i = 0; i < n; i++)
+        {   
+            flag = 0;
+            char ch = s[i];
+            for (int j = 0; j < 11; j++)
+            {
+                if (ch == arr[j])
+                {
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 0)
+            {
+                cout << "NO\n";
+                return;
+            }
+        }
+        if (flag == 1)
+            cout << "YES\n";
+        return;
+    }
+    else
+    {
+        cout << "NO\n"; // if not a palindrome then not a answer
+        return;
+    }
+}
+int main()
+{
+    solve();
+}
