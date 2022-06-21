@@ -1,0 +1,26 @@
+// https://codeforces.com/contest/1020/problem/A
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n, h, a, b, k;
+    cin >> n >> h >> a >> b >> k;
+    for (int i = 1; i <= k; i++)
+    {
+        int t1, f1, t2, f2;
+        cin >> t1 >> f1 >> t2 >> f2;
+        if (t1 == t2)
+        {
+            cout << abs(f2 - f1) << endl;
+        }
+        else if ((f1 >= a && f1 <= b) || (f2 >= a && f2 <= b))
+        {
+            cout << abs(t1 - t2) + abs(f1 - f2) << endl;
+        }
+        else
+        {
+            int ans = abs(t2 - t1);
+            cout << ans + min(abs(f1 - a) + abs(f2 - a), abs(f1 - b) + abs(f2 - b)) << endl;
+        }
+    }
+}
