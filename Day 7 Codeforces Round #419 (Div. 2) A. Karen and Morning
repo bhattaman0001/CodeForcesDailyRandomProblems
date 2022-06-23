@@ -1,0 +1,57 @@
+// https://codeforces.com/problemset/problem/816/A
+#include <bits/stdc++.h>
+#include <unordered_map>
+#define f ios_base::sync_with_stdio(false);
+#define fs cin.tie(0)
+#define ll long long int
+#define pb push_back
+#define mp make_pair
+#define endl "\n"
+#define nl cout << endl;
+#define fii(i, n) for (int i = 0; i < n; i++)
+#define sortall(v) sort(v.begin(), v.end())
+#define sortrev(v) sort(v.end(), v.begin())
+#define pill pair<ll, ll>
+#define vill vector<ll>
+#define sill set<ll>
+#define vvill vector<vill>
+#define villmp vector<pair<ll, ll>>
+#define pii pair<int, int>
+#define vii vector<int>
+#define sii set<int>
+#define vvii vector<vii>
+#define viimp vector<pair<int, int>>
+#define in(v) fii(i, n) cin >> v[i];
+#define out(v) fii(i, n) cout << v[i] << " ";
+ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }
+ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
+using namespace std;
+
+/*🔥🔥🔥🔥🔥🔥🔥🔥Author : Aman Bhatt (Codeforces handle: bhattaman0001)🔥🔥🔥🔥🔥🔥🔥🔥*/
+
+void solve()
+{
+    string s;
+    cin >> s;
+    int h = stoi(s.substr(0, 2));
+    int m = stoi(s.substr(3));
+    int t = 0;
+    while (h / 10 + h % 10 * 10 != m)
+    {
+        m++, t++;
+        if (m > 59)
+            h++, m = 0;
+        if (h > 23)
+            h = 0;
+    }
+    cout << t << endl;
+    return;
+}
+
+/* Main Begin */
+int main()
+{
+    f fs;
+    solve();
+    return 0;
+}
