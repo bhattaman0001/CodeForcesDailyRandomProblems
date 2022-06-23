@@ -1,0 +1,73 @@
+// https://codeforces.com/problemset/problem/1547/C
+#include <bits/stdc++.h>
+#include <unordered_map>
+#define f ios_base::sync_with_stdio(false);
+#define fs cin.tie(0)
+#define ll long long int
+#define pb push_back
+#define mp make_pair
+#define endl "\n"
+#define nl cout << endl;
+#define fii(i, n) for (int i = 0; i < n; i++)
+#define sortall(v) sort(v.begin(), v.end())
+#define sortrev(v) sort(v.end(), v.begin())
+#define pill pair<ll, ll>
+#define vill vector<ll>
+#define sill set<ll>
+#define vvill vector<vill>
+#define villmp vector<pair<ll, ll>>
+#define pii pair<int, int>
+#define vii vector<int>
+#define sii set<int>
+#define vvii vector<vii>
+#define viimp vector<pair<int, int>>
+#define in(v) fii(i, n) cin >> v[i];
+#define out(v) fii(i, n) cout << v[i] << " ";
+ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }
+ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
+using namespace std;
+
+// 🔥🔥🔥🔥🔥🔥🔥🔥Author : Aman Bhatt (Codeforces handle: bhattaman0001)🔥🔥🔥🔥🔥🔥🔥🔥
+
+void solve()
+{
+    cout << "\n";
+    int k, n, m;
+    cin >> k >> n >> m;
+    int a[n], b[m], c[n + m], gg = 0;
+    for (int &x : a)
+        cin >> x;
+    for (int &x : b)
+        cin >> x;
+    merge(a, a + n, b, b + m, c);
+    for (int x : c)
+    {
+        if (x == 0)
+            k += 1;
+        else
+            gg |= x > k;
+    }
+    if (gg)
+        cout << "-1\n";
+    else
+    {
+        for (int i : c)
+            cout << i << " ";
+    }
+    cout << endl;
+    return;
+}
+
+// Main Begin
+int main()
+{
+    f fs;
+    int test;
+    cin >> test;
+    cout << "\n";
+    while (test--)
+    {
+        solve();
+    }
+    return 0;
+}
