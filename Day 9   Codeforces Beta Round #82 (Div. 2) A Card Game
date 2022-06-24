@@ -1,0 +1,49 @@
+//  https://codeforces.com/contest/106/problem/A
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    char ch;
+    cin >> ch;
+    char s1[2], s2[2];
+    cin >> s1[0] >> s1[1];
+    cin >> s2[0] >> s2[1];
+    char rank[9] = {'6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'};
+    if (s1[1] != s2[1])
+    {
+        if (s1[1] == ch)
+        {
+            cout << "YES\n";
+        }
+        else
+        {
+            cout << "NO\n";
+        }
+    }
+    else
+    {
+        int p1, p2;
+        for (int i = 0; i < 9; i++)
+        {
+            if (rank[i] == s1[0])
+            {
+                p1 = i;
+            }
+        }
+        for (int i = 0; i < 9; i++)
+        {
+            if (rank[i] == s2[0])
+            {
+                p2 = i;
+            }
+        }
+        if (p1 > p2)
+        {
+            cout << "YES\n";
+        }
+        else
+        {
+            cout << "NO\n";
+        }
+    }
+}
