@@ -1,0 +1,19 @@
+// https://codeforces.com/problemset/problem/1342/A
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+	// your code goes here
+	long long t;
+	cin>>t;
+	while(t--){     
+        long long x, y;
+        cin>>x>>y;
+        long long a, b;
+        cin>>a>>b;
+        long long mi = min(x, y);
+        long long ma = max(x, y);
+        long long ans = min(x*a + y*a, min((ma-mi)*a + mi*b, (ma-mi)*a + ma*b));
+        cout<<ans<<endl;
+	}
+	return 0;
+}
