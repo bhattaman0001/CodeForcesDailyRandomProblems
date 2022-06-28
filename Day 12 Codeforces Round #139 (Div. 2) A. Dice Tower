@@ -1,0 +1,19 @@
+// https://codeforces.com/problemset/problem/225/A
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n, x;
+    cin>>n>>x;
+    int f=1;
+    for(int i=0;i<n;i++){
+        int a, b;
+        cin>>a>>b;
+        if(a==x || a==7-x || b==x || b==7-x){
+            cout<<"NO\n";
+            f=0;
+            break;
+        }
+    }
+    if(f)
+        cout<<"YES\n";
+}
