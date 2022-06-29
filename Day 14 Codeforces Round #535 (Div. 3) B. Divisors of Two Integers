@@ -1,0 +1,41 @@
+// https://codeforces.com/problemset/problem/1108/B
+#include<iostream>
+#include <bits/stdc++.h>
+using namespace std;
+vector<int> divisorsOf(int n){
+    vector<int> ans;
+    for(int i=1;i<=n;i++){
+        if(n % i == 0){
+            ans.push_back(i);
+        }
+    }
+    return ans;
+}
+int main() {
+	int n;
+	cin>>n;
+	vector<int> arr(n);
+	unordered_map<int, int> mp;
+	int ma = INT_MIN;
+	for(int i=0;i<n;i++){
+	    int x;
+	    cin>>x;
+	    arr[i] = x;
+	    mp[arr[i]]++;
+	    ma = max(ma, arr[i]);
+	}
+	vector<int> t = divisorsOf(ma); // first i found the divisors of maximum element i.e x
+	for(int i=0;i<t.size();i++){
+	    mp[t[i]]--; // then erase the divisors of maximum element from map so i was only left with the divisors of y
+	    if(mp[t[i]] == 0){
+	        mp.erase(t[i]);
+	    }
+	}
+	int ans = 0;
+	for(auto i:mp){
+	    ans = max(ans, i.first); // then y is maximum of remaining diviors
+	   //cout<<i.first<<" "<<i.second<<endl;
+	}
+	cout<<ma<<" "<<ans<<endl;
+	return 0;
+}
