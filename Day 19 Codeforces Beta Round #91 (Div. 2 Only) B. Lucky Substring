@@ -1,0 +1,38 @@
+// https://codeforces.com/contest/122/problem/B
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    cin >> s;
+    int n = s.size();
+    int cnt4 = 0, cnt7 = 0;
+    for (int i = 0; i < n; i++)
+    {
+        int t = s[i] - '0';
+        if (t == 4)
+        {
+            cnt4++;
+        }
+        if (t == 7)
+        {
+            cnt7++;
+        }
+    }
+    if (cnt4 == 0 and cnt7 == 0)
+    {
+        cout << "-1\n";
+    }
+    else if (cnt4 == cnt7)
+    {
+        cout << "4\n";
+    }
+    else if (cnt4 < cnt7)
+    {
+        cout << "7\n";
+    }
+    else if (cnt4 > cnt7)
+    {
+        cout << "4\n";
+    }
+}
