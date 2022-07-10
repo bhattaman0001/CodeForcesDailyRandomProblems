@@ -1,0 +1,25 @@
+// https://codeforces.com/contest/137/problem/B
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin >> n;
+    int arr[n];
+    set<int> st;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+        st.insert(arr[i]);
+    }
+    int check = 0;
+    for (auto it : st)
+    {
+        if (it < 1 || it > n)
+        {
+            check++; // for eg: n=5 and arr-> 6 6 6 6 6 then ans is 5 not 5-1(st.size())
+        }
+    }
+    cout << n - st.size() + check << endl;
+    return 0;
+}
