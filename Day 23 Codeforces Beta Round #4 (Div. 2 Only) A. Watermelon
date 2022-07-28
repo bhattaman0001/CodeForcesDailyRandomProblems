@@ -1,0 +1,22 @@
+// https://codeforces.com/contest/4/problem/A
+#include <bits/stdc++.h>
+#define int long long int
+using namespace std;
+void solve()
+{
+    int n;
+    cin>>n;
+    if(n%2==1 || n==2) cout<<"NO\n";
+    else cout<<"YES\n";
+    return;
+}
+
+signed main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    // int test;
+    // cin >> test;
+    // while (test--)
+    solve();
+}
