@@ -1,0 +1,40 @@
+// https://codeforces.com/contest/499/problem/B
+#include <bits/stdc++.h>
+#define int long long int
+using namespace std;
+void solve()
+{
+    int n, m;
+    cin>>n>>m;
+    unordered_map<string, string> mp;
+    for(int i=0;i<m;i++){
+        string s1, s2;
+        cin>>s1>>s2;
+        mp[s1] = s2;
+    }
+    vector<string> v(n);
+    vector<string> ans(n);
+    for(int i=0;i<n;i++){
+        cin>>v[i];
+        if(v[i].size() > mp[v[i]].size()){
+            ans[i] = mp[v[i]];
+        }else{
+            ans[i] = v[i];
+        }
+    }
+    for(int i=0;i<n;i++){
+        cout<<ans[i]<<" ";
+    }
+    cout<<"\n";
+    return;
+}
+
+signed main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    // int test;
+    // cin >> test;
+    // while (test--)
+    solve();
+}
